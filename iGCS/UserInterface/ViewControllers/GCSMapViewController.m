@@ -19,6 +19,7 @@
 
 #import "CXAlertView.h"
 
+#import "GCSSpeechManager.h"
 
 @interface GCSMapViewController ()
 @property (nonatomic, assign) enum MAV_TYPE uavType;
@@ -303,6 +304,7 @@ static UIImage *quadIcon = nil;
                           handler:^(CXAlertView *alertView, CXAlertButtonItem *button) {
                               [alertView dismiss];
                           }];
+    
     alertView.showBlurBackground = YES;
 
     // Add pan gesture to allow modification of target altitude
@@ -313,6 +315,10 @@ static UIImage *quadIcon = nil;
     [alertView addGestureRecognizer:panGesture];
 
     [alertView show];
+
+    GCSSpeechManager *speechManager = [[GCSSpeechManager alloc]init];
+    [speechManager flyToPosition];
+
 }
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)sender {
