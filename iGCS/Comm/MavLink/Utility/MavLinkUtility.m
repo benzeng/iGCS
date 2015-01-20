@@ -23,14 +23,17 @@ NSDictionary *_ardupilotModes;
         _missionItemMetadata[@(MAV_CMD_NAV_WAYPOINT)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                          andUnits:GCSItemUnitMetres
                                                                                      andFieldType:GCSItemParamZ]];
+
         _missionItemMetadata[@(MAV_CMD_NAV_LOITER_UNLIM)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                              andUnits:GCSItemUnitMetres
                                                                                          andFieldType:GCSItemParamZ]];
+
         _missionItemMetadata[@(MAV_CMD_NAV_LOITER_TURNS)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                              andUnits:GCSItemUnitMetres
                                                                                          andFieldType:GCSItemParamZ],
                                                               [[MissionItemField alloc] initWithLabel:@"# Turns"
                                                                                          andFieldType:GCSItemParam1]];
+
         _missionItemMetadata[@(MAV_CMD_NAV_LOITER_TIME)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                             andUnits:GCSItemUnitMetres
                                                                                         andFieldType:GCSItemParamZ],
@@ -38,12 +41,15 @@ NSDictionary *_ardupilotModes;
                                                              [[MissionItemField alloc] initWithLabel:@"Time"
                                                                                             andUnits:GCSItemUnitSeconds
                                                                                         andFieldType:GCSItemParam1]];
+
         _missionItemMetadata[@(MAV_CMD_NAV_RETURN_TO_LAUNCH)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                                  andUnits:GCSItemUnitMetres
                                                                                              andFieldType:GCSItemParamZ]];
+
         _missionItemMetadata[@(MAV_CMD_NAV_LAND)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                      andUnits:GCSItemUnitMetres
                                                                                  andFieldType:GCSItemParamZ]];
+
         _missionItemMetadata[@(MAV_CMD_NAV_TAKEOFF)] = @[[[MissionItemField alloc] initWithLabel:@"Altitude"
                                                                                         andUnits:GCSItemUnitMetres
                                                                                     andFieldType:GCSItemParamZ],
@@ -55,12 +61,14 @@ NSDictionary *_ardupilotModes;
         _missionItemMetadata[@(MAV_CMD_CONDITION_DELAY)] = @[[[MissionItemField alloc] initWithLabel:@"Time"
                                                                                             andUnits:GCSItemUnitSeconds
                                                                                         andFieldType:GCSItemParam3]];
+
         _missionItemMetadata[@(MAV_CMD_CONDITION_CHANGE_ALT)] = @[[[MissionItemField alloc] initWithLabel:@"Rate"
                                                                                                  andUnits:GCSItemUnitCentimetresPerSecond
                                                                                              andFieldType:GCSItemParam1],
                                                                   [[MissionItemField alloc] initWithLabel:@"Final Altitude"
                                                                                                  andUnits:GCSItemUnitMetres
                                                                                              andFieldType:GCSItemParam2]];
+
         _missionItemMetadata[@(MAV_CMD_CONDITION_DISTANCE)] = @[[[MissionItemField alloc] initWithLabel:@"Distance"
                                                                                                andUnits:GCSItemUnitMetres
                                                                                            andFieldType:GCSItemParam3]];
@@ -68,6 +76,7 @@ NSDictionary *_ardupilotModes;
         // DO CMD mission items
         _missionItemMetadata[@(MAV_CMD_DO_JUMP)] = @[[[MissionItemField alloc] initWithLabel:@"Index" andFieldType:GCSItemParam1],
                                                      [[MissionItemField alloc] initWithLabel:@"Repeat Count" andFieldType:GCSItemParam3]];
+
         _missionItemMetadata[@(MAV_CMD_DO_CHANGE_SPEED)] = @[[[MissionItemField alloc] initWithLabel:@"Speed type"
                                                                                         andFieldType:GCSItemParam1],
                                                              [[MissionItemField alloc] initWithLabel:@"Speed"
@@ -90,6 +99,7 @@ NSDictionary *_ardupilotModes;
          
         _missionItemMetadata[@(MAV_CMD_DO_SET_RELAY)] = @[[[MissionItemField alloc] initWithLabel:@"Relay #" andFieldType:GCSItemParam1],
                                                           [[MissionItemField alloc] initWithLabel:@"On/Off" andFieldType:GCSItemParam2]];
+
         _missionItemMetadata[@(MAV_CMD_DO_REPEAT_RELAY)] = @[[[MissionItemField alloc] initWithLabel:@"Relay #"
                                                                                         andFieldType:GCSItemParam1],
                                                              [[MissionItemField alloc] initWithLabel:@"Cycle count"
@@ -110,33 +120,33 @@ NSDictionary *_ardupilotModes;
                                                                                         andFieldType:GCSItemParam3]];
 
         NSDictionary *apmPlaneCustomModes = @{@(APMPlaneManual): @"Manual",
-                                                        @(APMPlaneCircle): @"Circle",
-                                                        @(APMPlaneStabilize): @"Stabilize",
-                                                        @(APMPlaneFlyByWireA): @"FBW_A",
-                                                        @(APMPlaneFlyByWireB): @"FBW_B",
-                                                        @(APMPlaneFlyByWireC): @"FBW_C",
-                                                        @(APMPlaneAuto): @"Auto",
-                                                        @(APMPlaneRtl): @"RTL",
-                                                        @(APMPlaneLoiter): @"Loiter",
-                                                        @(APMPlaneTakeoff): @"Takeoff",
-                                                        @(APMPlaneLand): @"Land",
-                                                        @(APMPlaneGuided): @"Guided",
-                                                        @(APMPlaneInitialising): @"Initialising"};
-        
+                                              @(APMPlaneCircle): @"Circle",
+                                              @(APMPlaneStabilize): @"Stabilize",
+                                              @(APMPlaneFlyByWireA): @"FBW_A",
+                                              @(APMPlaneFlyByWireB): @"FBW_B",
+                                              @(APMPlaneFlyByWireC): @"FBW_C",
+                                              @(APMPlaneAuto): @"Auto",
+                                              @(APMPlaneRtl): @"RTL",
+                                              @(APMPlaneLoiter): @"Loiter",
+                                              @(APMPlaneTakeoff): @"Takeoff",
+                                              @(APMPlaneLand): @"Land",
+                                              @(APMPlaneGuided): @"Guided",
+                                              @(APMPlaneInitialising): @"Initialising"};
+
         NSDictionary *apmCopterCustomModes = @{@(APMCopterStabilize): @"Stabilize",
-                                                        @(APMCopterAcro): @"Acro",
-                                                        @(APMCopterAltHold): @"AltHold",
-                                                        @(APMCopterAuto): @"Auto",
-                                                        @(APMCopterGuided): @"Guided",
-                                                        @(APMCopterLoiter): @"Loiter",
-                                                        @(APMCopterRtl): @"RTL",
-                                                        @(APMCopterCircle): @"Circle",
-                                                        @(APMCopterPosition): @"Position",
-                                                        @(APMCopterLand): @"Land",
-                                                        @(APMCopterOfLoiter): @"OfLoiter",
-                                                        @(APMCopterDrift): @"Drift",
-                                                        @(APMCopterSport): @"Sport"};
-        
+                                               @(APMCopterAcro): @"Acro",
+                                               @(APMCopterAltHold): @"AltHold",
+                                               @(APMCopterAuto): @"Auto",
+                                               @(APMCopterGuided): @"Guided",
+                                               @(APMCopterLoiter): @"Loiter",
+                                               @(APMCopterRtl): @"RTL",
+                                               @(APMCopterCircle): @"Circle",
+                                               @(APMCopterPosition): @"Position",
+                                               @(APMCopterLand): @"Land",
+                                               @(APMCopterOfLoiter): @"OfLoiter",
+                                               @(APMCopterDrift): @"Drift",
+                                               @(APMCopterSport): @"Sport"};
+
         _ardupilotModes = @{@(MAV_TYPE_FIXED_WING): apmPlaneCustomModes,
                             @(MAV_TYPE_TRICOPTER):  apmCopterCustomModes,
                             @(MAV_TYPE_QUADROTOR):  apmCopterCustomModes,
